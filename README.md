@@ -47,3 +47,6 @@ Programs: Pandas, Numpy, Matplotlib, Plotly Express, os
 
 # Why Should Individuals Take Interest?
   *Explanation here*
+
+# How To Replicate My Work
+  *Explanation here*
