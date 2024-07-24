@@ -45,7 +45,8 @@ The last factor considered was the effect of different social media platforms on
 My overall hypothesis was that time spent on social media has a direct effect on an individual's reported dominant emotion.
 
 > Null Hypothesis (H<sub>0</sub>): The variances of "Daily_Usage_Time" are equal across different "Dominant_Emotion" groups.
-Alternative Hypothesis (H<sub>a</sub>): At least one group has a variance that is different from the others.
+
+> Alternative Hypothesis (H<sub>a</sub>): At least one group has a variance that is different from the others.
 
 To test this, I first tested all emotions to the amount of time spent on social media using the Pearson correlation.
 
@@ -85,7 +86,7 @@ This can be interpeted as a somewhat strong correlation between emotional state 
     Interpretation: A correlation coefficient close to 1 or -1 indicates a strong relationship.
     A p-value < 0.05 indicates the correlation is statistically significant.
 
-From this we can gather that happiness, nuetral, boredom, and sadness maintain a statistically significant correlation, with happiness having the strongest relationship. 
+From this we can gather that happiness, nuetral, boredom, and sadness maintain a statistically significant correlation, with happiness having the strongest relationship. With this, <mark>we accept the alternate hypothesis that at least one emotional group has a variance that is different from the others</mark>.
 
 ## Regressions
 
