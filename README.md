@@ -88,7 +88,9 @@ This can be interpeted as a somewhat strong correlation between emotional state 
     A large t-score, or t-value, indicates that the groups are different while a small t-score indicates that the groups are similar.
     A p-value < 0.05 indicates the correlation is statistically significant.
 
-From this we can gather that anxiety is likely the only emotion given with a weak correlation, with happiness positively varying the most from the other emotions and boredom negatively varying the most from the other emotions. With this, <mark>we accept the alternate hypothesis that at least one emotional group has a variance that is different from the others</mark>.
+From this we can gather that anxiety is likely the only emotion given with a weak correlation, with happiness positively varying the most from the other emotions and boredom negatively varying the most from the other emotions. 
+
+Given these results, <mark>we accept the alternate hypothesis that at least one emotional group has a variance that is different from the others</mark>.
 
 ## Regressions
 
