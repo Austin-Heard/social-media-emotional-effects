@@ -53,40 +53,42 @@ To test this, I first tested all emotions to the amount of time spent on social 
     Pearson correlation coefficient: -0.5396408800429509
     P-value: 1.1931272746862407e-76
 
-    Interpretation: A correlation coefficient close to 1 or -1 indicates a strong relationship.
+    Interpretation: 
+    A correlation coefficient close to 1 or -1 indicates a strong relationship.
     A p-value < 0.05 indicates the correlation is statistically significant.
 
-This can be interpeted as a somewhat strong correlation between emotional state and amount of time spent on social media. Rather than accepting this, I used the Pearson correlation to test total amount of time spent on social media against each emotion individually to see if any emotions had a stronger correlation than others.
+This can be interpeted as a somewhat strong correlation between emotional state and amount of time spent on social media. Rather than accepting this, I used Welch's t-test to determine the total amount of time spent on social media against each emotion individually to see if any emotions had a stronger correlation than others.
 
-    Emotion Value: Happiness
-    Correlation coefficient: 0.7024025007688279
-    P-value: 1.571471817667403e-149
+    Emotion: Happiness
+    T-statistic: 30.975362701817613
+    P-value: 5.129037878028241e-96
     ------------------------------
-    Emotion Value: Anger
-    Correlation coefficient: -0.05923116918731677
-    P-value: 0.061157451336261916
+    Emotion: Anger
+    T-statistic: -3.5242634042544436
+    P-value: 0.000465980235315997
     ------------------------------
-    Emotion Value: Neutral
-    Correlation coefficient: -0.23434877202553017
-    P-value: 6.084063775083197e-14
+    Emotion: Neutral
+    T-statistic: -10.34249776804165
+    P-value: 5.834983440565121e-23
     ------------------------------
-    Emotion Value: Anxiety
-    Correlation coefficient: -0.004216313536894743
-    P-value: 0.8940625955767559
+    Emotion: Anxiety
+    T-statistic: -0.1383342901601676
+    P-value: 0.8900863394074395
     ------------------------------
-    Emotion Value: Boredom
-    Correlation coefficient: -0.3327183742368559
-    P-value: 2.8281079416464923e-27
+    Emotion: Boredom
+    T-statistic: -22.073803193060304
+    P-value: 4.855871375992328e-82
     ------------------------------
-    Emotion Value: Sadness
-    Correlation coefficient: -0.13712020972567962
-    P-value: 1.3535336135392227e-05
+    Emotion: Sadness
+    T-statistic: -5.54365454323335
+    P-value: 6.527112857189835e-08
     ------------------------------
 
-    Interpretation: A correlation coefficient close to 1 or -1 indicates a strong relationship.
+    Interpretation: 
+    A large t-score, or t-value, indicates that the groups are different while a small t-score indicates that the groups are similar.
     A p-value < 0.05 indicates the correlation is statistically significant.
 
-From this we can gather that happiness, nuetral, boredom, and sadness maintain a statistically significant correlation, with happiness having the strongest relationship. With this, <mark>we accept the alternate hypothesis that at least one emotional group has a variance that is different from the others</mark>.
+From this we can gather that anxiety is likely the only emotion given with a weak correlation, with happiness positively varying the most from the other emotions and boredom negatively varying the most from the other emotions. With this, <mark>we accept the alternate hypothesis that at least one emotional group has a variance that is different from the others</mark>.
 
 ## Regressions
 
