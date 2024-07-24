@@ -85,6 +85,23 @@ def make_stack(df=object, cat=bool, iterator=1, x_column=str, color=str, overlay
 
     plt.show()
 
+def categorial_count_bar(db, cat_col, colors):
+    default_colors = ['olive', 'orange', 'purple', 'brown', 'indigo', 'violet']
+    if colors:
+        pass
+    else:
+        values = db[cat_col].unique()
+        while len(values) > len(default_colors):
+            default_colors.append(default_colors)
+        colors = [default_colors[i] for i in range(len(values))]
+
+    db[cat_col].value_counts().plot(kind='bar', figsize=(7, 7), color=colors)
+    plt.ylabel(f"{cat_col} Total Counts")
+    plt.xlabel(f"{cat_col} Reported")
+    plt.xticks(rotation=45)
+    plt.savefig('../img/Category_Totals_Bar.png', bbox_inches='tight')
+    plt.show() 
+
 if __name__ == "main":
     # Import only if called directly from the file
     import pandas as pd
@@ -92,7 +109,6 @@ if __name__ == "main":
     import matplotlib.pyplot as plt
     import seaborn as sns
     import argparse
-    import os
 
     # Room here for argparse arguements later
     pass
