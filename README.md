@@ -40,6 +40,53 @@ The last factor considered was the effect of different social media platforms on
 
 ![Social Media Platform to Emotion Correlation](/img/Platform_to_Emotion_Corr.png)
 
+## Hypothesis Testing
+
+My overall hypothesis was that time spent on social media has a direct effect on an individual's reported dominant emotion.
+
+> Null Hypothesis (H<sub>0</sub>): The variances of "Daily_Usage_Time" are equal across different "Dominant_Emotion" groups.
+Alternative Hypothesis (H<sub>a</sub>): At least one group has a variance that is different from the others.
+
+To test this, I first tested all emotions to the amount of time spent on social media using the Pearson correlation.
+
+    Pearson correlation coefficient: -0.5396408800429509
+    P-value: 1.1931272746862407e-76
+
+    Interpretation: A correlation coefficient close to 1 or -1 indicates a strong relationship.
+    A p-value < 0.05 indicates the correlation is statistically significant.
+
+This can be interpeted as a somewhat strong correlation between emotional state and amount of time spent on social media. Rather than accepting this, I used the Pearson correlation to test total amount of time spent on social media against each emotion individually to see if any emotions had a stronger correlation than others.
+
+    Emotion Value: Happiness
+    Correlation coefficient: 0.7024025007688279
+    P-value: 1.571471817667403e-149
+    ------------------------------
+    Emotion Value: Anger
+    Correlation coefficient: -0.05923116918731677
+    P-value: 0.061157451336261916
+    ------------------------------
+    Emotion Value: Neutral
+    Correlation coefficient: -0.23434877202553017
+    P-value: 6.084063775083197e-14
+    ------------------------------
+    Emotion Value: Anxiety
+    Correlation coefficient: -0.004216313536894743
+    P-value: 0.8940625955767559
+    ------------------------------
+    Emotion Value: Boredom
+    Correlation coefficient: -0.3327183742368559
+    P-value: 2.8281079416464923e-27
+    ------------------------------
+    Emotion Value: Sadness
+    Correlation coefficient: -0.13712020972567962
+    P-value: 1.3535336135392227e-05
+    ------------------------------
+
+    Interpretation: A correlation coefficient close to 1 or -1 indicates a strong relationship.
+    A p-value < 0.05 indicates the correlation is statistically significant.
+
+From this we can gather that happiness, nuetral, boredom, and sadness maintain a statistically significant correlation, with happiness having the strongest relationship. 
+
 ## Regressions
 
 # Further Expansion
