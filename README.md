@@ -57,7 +57,7 @@ To test this, I first tested all emotions to the amount of time spent on social 
     A correlation coefficient close to 1 or -1 indicates a strong relationship.
     A p-value < 0.05 indicates the correlation is statistically significant.
 
-This can be interpeted as a somewhat strong correlation between emotional state and amount of time spent on social media. Rather than accepting this, I used Welch's t-test to determine the total amount of time spent on social media against each emotion individually to see if any emotions had a stronger correlation than others.
+This can be interpeted as a somewhat strong correlation between emotional state and amount of time spent on social media. With this in mind, I used Welch's t-test to determine the total amount of time spent on social media against each emotion individually to see if any emotions had a stronger correlation than others.
 
     Emotion: Happiness
     T-statistic: 30.975362701817613
