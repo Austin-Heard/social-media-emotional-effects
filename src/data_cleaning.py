@@ -7,6 +7,9 @@ def can_convert_to_int(value):
         return False
     
 def cleaner(df, ml):
+    # Remove the user_id column as it's only caused problems and is not helpful
+    df.drop("User_ID", axis=1, inplace=True)
+
     # Condition to identify rows where values need to be swapped using above function
     condition = df.apply(lambda row: can_convert_to_int(row['Gender']), axis=1)
 
@@ -19,13 +22,13 @@ def cleaner(df, ml):
 
     # Check if dummy needs to be applied for categorial vars
     if ml:
-        df = df.drop("User_ID", axis=1, inplace=True)
         # Getting dummies for all categorial variables
-        df = pd.get_dummies(df)
+        df = pd.get_dummies(df, columns=["Dominant_Emotion", "Gender", "Platform"])
+
     return df
 
 # Function called to begin cleaning
-def initial_clean(database, output, split=False, ml=False):
+def initial_clean(database, output=str, split=bool, ml=bool):
     # Set csv file path to a pandas db
     df = pd.read_csv(database)
 
@@ -52,16 +55,17 @@ def initial_clean(database, output, split=False, ml=False):
         df = cleaner(df, ml)
         df.to_csv(f'{output}/clean.csv', index=False)
 
-if __name__ == 'main':
+if __name__ == '__main__':
     import argparse
     import pandas as pd
     import os
     from sklearn.model_selection import train_test_split
-
     parser = argparse.ArgumentParser(description="Clean a given dataset for social media study")
     parser.add_argument("db", type=str, help="the relative file path to the csv to be cleaned")  # Arguements
-    parser.add_argument("out", type=str, help="the relative file path to the cleaned csv output")
-    parser.add_argument("split", type=bool, help="Set false by default, true if data needs split.\n False if data already split.")
-    parser.add_argument("ml", type=bool, help="Set false by default, true if used to train machine learning and need split categorial vars.")
+    parser.add_argument("ml", type=bool, nargs='?', const=False, help="Set false by default, true if used to train machine learning and need split categorial vars.")
+    parser.add_argument("out", type=str, nargs='?', const="", help="the relative file path to the cleaned csv output")
+    parser.add_argument("split", type=bool, nargs='?', const=False, help="Set false by default, true if data needs split.\n False if data already split.")
+ 
     args = parser.parse_args()  # Parses the arguements given into variables
+
     initial_clean(args.db, args.out, args.split, args.ml)
