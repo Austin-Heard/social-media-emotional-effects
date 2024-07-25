@@ -46,7 +46,7 @@ def make_cat_from_int(df=object, column=str, iterator=int):
     # Return the entire dataframe
     return df
 
-def make_stack(df=object, cat=bool, iterator=1, x_column=str, color=str, overlay=bool, saveto=str):
+def make_stack(df=str, cat=bool, iterator=1, x_column=str, color=str, overlay=bool, saveto=str):
     # Identify given columns
     columns = list(df.columns)
 

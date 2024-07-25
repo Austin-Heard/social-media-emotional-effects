@@ -9,7 +9,7 @@ def can_convert_to_int(value):
     except ValueError:
         return False
     
-def cleaner(df, ml):
+def cleaner(df=object, ml=bool):
 
     # Dropping any rows without full information, given how few columns there are, each value is important to have
     # Not many ways to fill in missing information accurately given many contributing factors
@@ -32,15 +32,15 @@ def cleaner(df, ml):
     return df
 
 # Function called to begin cleaning
-def initial_clean(database, output=str, split=bool, ml=bool):
+def initial_clean(dataframe=str, output=str, split=bool, ml=bool):
     # Set csv file path to a pandas db
-    df = pd.read_csv(database)
+    df = pd.read_csv(dataframe)
 
     # Check if output was specified
     if output:
         pass
     else:
-        output = os.path.dirname(database)
+        output = os.path.dirname(dataframe)
 
     # Check if data needs split for train/test
     if split:
