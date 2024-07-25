@@ -94,11 +94,79 @@ Given these results, <mark>we accept the alternate hypothesis that at least one 
 
 ## Regressions
 
+### Linear Regression
+
+To build a predictive model, I started by testing with a linear regression focused on daily usage and happiness. Given that the emotions were categorial, linear regression was highly ineffective as predicted, however this model could be fit to test time spent vs other continuous variables, but given time constraints and the primary focus of the project this was not something I pursued.
+
+    Slope: 0.007235479715289526
+    Intercept: -0.49424427868202997
+    R-squared: 0.49336927308630707
+    P-value: 1.5714718176617165e-149
+    Standard Error: 0.00023209285643469973
+
+![Daily Usage to Happiness Linear Regression](/img/DailyUsage_vs_Happiness_linreg.png)
+
+### Binomial Logistic Regression
+
+Moving on to logistic regression, I began with targetting the binarized 'Dominant_Emotion_Happiness'. Given all other parameters, the model was 96% accurate.
+
+    Accuracy: 0.96
+    Confusion Matrix:
+    [[160   5]
+    [  3  32]]
+
+![Happiness Logistical Regression](/img/happiness_logistical_regression.png)
+
+I also created two models with both a binarized version of gender targetting females and daily usage time (minutes) where the model was tasked with predicting whether the user used social median more than the mean of all users.
+
+#### Female Predictions
+
+![Female Logistical Regression](/img/female_logistical_regression.png)
+
+    Accuracy: 1.0
+    Confusion Matrix:
+    [[126   0]
+    [  0  74]]
+
+#### "Heavy" Social Media User Predictions
+
+![Heavy User Logistical Regression](/img/DailyUsage_logistical_regression.png)
+
+    Accuracy: 0.96
+    Confusion Matrix:
+    [[132   0]
+    [  8  60]]
+
+### Multinomial Logistic Regression
+
+Using the binomial regressions as a base, I pursued multinomial logistic models for gender and emotion. These proved far less effective in their predictions than the binomial logistical regressions, but interesting nonetheless.
+
+#### Gender Logistical Regression
+
+![Gender Multinomial Logistic Regression](/img/Gender_Multinomial_logistical_regression.png)
+
+    Confusion Matrix:
+    [[45 20  9]
+    [12 52 10]
+    [ 5 13 34]]
+
+#### Emotion Logistical Regression
+
+![Emotion Multinomial Logistic Regression](/img/Emotion_Multinomial_logistical_regression.png)
+
+    Confusion Matrix:
+    [[19  0  0  0  6  4]
+    [ 0 16  8  4  2  9]
+    [ 2  0 18  0 11  0]
+    [ 2  0  0 32  0  1]
+    [ 5  2  6  2 18  9]
+    [ 5  3  1  0  6  9]]
+
 # Further Expansion
-  *Explanation here*
+  If I or any collaborators were to expand further, I would like to implement a dataset coinciding with this one that shows the effect of *either* social media or emotion's affect on productivity. Using that, social media usage and emotion could be used to make a predictive model of these factors on productivity.
 
 # Why Should Individuals Take Interest?
-  *Explanation here*
+  As social media creeps more and more into the realm of spyware and manipulation using algorithms to keep users solidly engaged as often as possible, the effect on emotional status and stability should continue to be monitored to determine the long term affects.
 
 # How To Replicate My Work
   *Explanation here*
