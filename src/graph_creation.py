@@ -102,7 +102,7 @@ def categorial_count_bar(db, cat_col, colors):
     plt.savefig('../img/Category_Totals_Bar.png', bbox_inches='tight')
     plt.show() 
 
-if __name__ == "main":
+if __name__ == "__main__":
     # Import only if called directly from the file
     import pandas as pd
     import numpy as np

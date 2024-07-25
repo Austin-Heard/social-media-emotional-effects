@@ -1,3 +1,6 @@
+# Add in validation function making sure all columns have set, pre-defined answers for algorithmic learning
+
+
 # Function identifying if the value can be converted into a integer or not
 def can_convert_to_int(value):
     try:
@@ -7,8 +10,10 @@ def can_convert_to_int(value):
         return False
     
 def cleaner(df, ml):
-    # Remove the user_id column as it's only caused problems and is not helpful
-    df.drop("User_ID", axis=1, inplace=True)
+
+    # Dropping any rows without full information, given how few columns there are, each value is important to have
+    # Not many ways to fill in missing information accurately given many contributing factors
+    df.dropna(inplace=True)
 
     # Condition to identify rows where values need to be swapped using above function
     condition = df.apply(lambda row: can_convert_to_int(row['Gender']), axis=1)
@@ -16,14 +21,13 @@ def cleaner(df, ml):
     # Using the specified condition, swap the values into the proper column
     df.loc[condition, ['Age', 'Gender']] = df.loc[condition, ['Gender', 'Age']].values
 
-    # Dropping any rows without full information, given how few columns there are, each value is important to have
-    # Not many ways to fill in missing information accurately given many contributing factors
-    df.dropna(inplace=True)
+    # Remove the user_id column as it's only caused problems and is not helpful
+    df.drop("User_ID", axis=1, inplace=True)
 
     # Check if dummy needs to be applied for categorial vars
     if ml:
         # Getting dummies for all categorial variables
-        df = pd.get_dummies(df, columns=["Dominant_Emotion", "Gender", "Platform"])
+        df = pd.get_dummies(df, columns=["Gender", "Platform", "Dominant_Emotion"])
 
     return df
 

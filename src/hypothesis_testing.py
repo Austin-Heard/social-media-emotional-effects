@@ -38,5 +38,5 @@ def test_hypothesis(df=object, columns=list, categorial=bool):
             print('-' * 30)
     pass
 
-if __name__ == "main":
+if __name__ == "__main__":
     pass
