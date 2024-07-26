@@ -110,32 +110,32 @@ To build a predictive model, I started by testing with a linear regression focus
 
 Moving on to logistic regression, I began with targetting the binarized 'Dominant_Emotion_Happiness'. Given all other parameters, the model was 96% accurate.
 
-    Accuracy: 0.96
-    Confusion Matrix:
-    [[160   5]
-    [  3  32]]
+    Test Accuracy: 0.9223300970873787
+    Test Confusion Matrix:
+    [[84  5]
+    [ 3 11]]
 
-![Happiness Logistical Regression](/img/happiness_logistical_regression.png)
+![Happiness Logistical Regression](/img/binomial_test_happiness_confusion_matrix.png)
 
 I also created two models with both a binarized version of gender targetting females and daily usage time (minutes) where the model was tasked with predicting whether the user used social median more than the mean of all users.
 
 #### Female Predictions
 
-![Female Logistical Regression](/img/female_logistical_regression.png)
-
-    Accuracy: 1.0
+    Accuracy: 0.75
     Confusion Matrix:
-    [[126   0]
-    [  0  74]]
+    [[113  13]
+    [ 37  37]]
+
+![Female Logistical Regression](/img/female_logistical_regression.png)
 
 #### "Heavy" Social Media User Predictions
 
-![Heavy User Logistical Regression](/img/DailyUsage_logistical_regression.png)
+    Validation Accuracy: 0.9103448275862069
+    Validation Confusion Matrix:
+    [[82  5]
+    [ 8 50]]
 
-    Accuracy: 0.96
-    Confusion Matrix:
-    [[132   0]
-    [  8  60]]
+![Heavy User Logistical Regression](/img/DailyUsage_logistical_regression_Val.png)
 
 ### Multinomial Logistic Regression
 
